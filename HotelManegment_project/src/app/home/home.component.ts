@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonserviceService } from './common/commonservice.service';
+import { CommonService } from '../common.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import { CommonserviceService } from './common/commonservice.service';
 
 export class HomeComponent {
   constructor(private router: Router,
-    private commonService: CommonserviceService) { }
+    private commonService: CommonService
+   ) { }
   journey(journey: string) {
     if (journey === 'admin') {
       this.commonService.journey = 'admin'
@@ -26,6 +28,6 @@ export class HomeComponent {
       this.router.navigateByUrl('user');
     }
   }
-
-
 }
+
+
