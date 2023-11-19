@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UserhomeRoutingModule } from './userhome-routing.module';
+import { UserRoutingModule } from './user-routing.module';
 import { UserhomeComponent } from './userhome/userhome.component';
 
 
@@ -11,7 +11,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
   ],
   imports: [
     CommonModule,
-    UserhomeRoutingModule
+    UserRoutingModule
   ]
 })
-export class UserhomeModule { }
+export class UserModule { }
