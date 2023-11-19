@@ -10,8 +10,8 @@ import { CommonserviceService } from './common/commonservice.service';
 
 export class HomeComponent {
   constructor(private route:Router,
-    private commonservice:CommonserviceService){}
- journey(journey:string){
+    private commonservice :CommonserviceService){}
+    journey(journey:string){
   if(journey === 'admin'){
     this.commonservice.journey ='admin';
     this.route.navigateByUrl('admin');
