@@ -22,6 +22,7 @@ this.route.navigateByUrl('owner');
  }
 
  else(journey==='user');{
+  this.commonservice.journey ='user';
 this.route.navigateByUrl('user');
  }
  }
