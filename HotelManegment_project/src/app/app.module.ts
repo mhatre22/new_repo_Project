@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { UserhomeComponent } from './userhome/userhome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    UserhomeComponent,
    
   ],
   imports: [
@@ -19,4 +21,6 @@ import { HomeComponent } from './home/home.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }
