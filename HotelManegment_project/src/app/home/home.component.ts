@@ -9,23 +9,23 @@ import { CommonserviceService } from './common/commonservice.service';
 })
 
 export class HomeComponent {
-  constructor(private route:Router,
-    private commonservice :CommonserviceService){}
-    journey(journey:string){
-  if(journey === 'admin'){
-    this.commonservice.journey ='admin';
-    this.route.navigateByUrl('admin');
-  }
- else if(journey ==='owner'){
-  this.commonservice.journey = 'owner';
-this.route.navigateByUrl('owner');
- }
+  constructor(private router: Router,
+    private commonService: CommonserviceService) { }
+  journey(journey: string) {
+    if (journey === 'admin') {
+      this.commonService.journey = 'admin'
+      this.router.navigateByUrl('admin');
+    }
+    else if (journey === 'owner') {
+      this.commonService.journey = 'owner'
+      this.router.navigateByUrl('owner');
+    }
 
- else(journey ==='user');{
-  this.commonservice.journey ='user';
-this.route.navigateByUrl('user');
- }
- }
+    else (journey === 'user'); {
+      this.commonService.journey = 'user'
+      this.router.navigateByUrl('user');
+    }
+  }
 
 
 }
