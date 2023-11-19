@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { OwnerModule } from './owner/owner.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -20,6 +21,7 @@ import { OwnerModule } from './owner/owner.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     
   ],
   providers: [],

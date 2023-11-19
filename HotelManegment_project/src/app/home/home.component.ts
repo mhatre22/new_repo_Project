@@ -13,21 +13,18 @@ export class HomeComponent {
   constructor(private router: Router,
     private commonService: CommonService
    ) { }
-  journey(journey: string) {
-    if (journey === 'admin') {
-      this.commonService.journey = 'admin'
+  admin(){
       this.router.navigateByUrl('admin');
     }
-    else if (journey === 'owner') {
-      this.commonService.journey = 'owner'
+    owner(){
+    
       this.router.navigateByUrl('owner');
     }
 
-    else (journey === 'user'); {
-      this.commonService.journey = 'user'
+  user(){
       this.router.navigateByUrl('user');
     }
   }
-}
+
 
 
