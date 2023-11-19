@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin/admin.component';
+
+import { OwnerhomeComponent } from './owner/ownerhome/ownerhome.component';
 
 
 
@@ -11,8 +14,7 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     HomeComponent,
-   
-   
+  
   ],
   imports: [
     BrowserModule,

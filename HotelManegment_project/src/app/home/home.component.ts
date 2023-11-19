@@ -12,16 +12,16 @@ export class HomeComponent {
   constructor(private route:Router,
     private commonservice:CommonserviceService){}
  journey(journey:string){
-  if(journey=== 'admin'){
+  if(journey === 'admin'){
     this.commonservice.journey ='admin';
     this.route.navigateByUrl('admin');
   }
- else if(journey==='owner'){
+ else if(journey ==='owner'){
   this.commonservice.journey = 'owner';
 this.route.navigateByUrl('owner');
  }
 
- else(journey==='user');{
+ else(journey ==='user');{
   this.commonservice.journey ='user';
 this.route.navigateByUrl('user');
  }
