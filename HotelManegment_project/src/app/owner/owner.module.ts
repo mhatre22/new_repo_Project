@@ -19,7 +19,9 @@ import { SharedModule } from './ownerhome/owner-login/common/shared/shared.modul
   imports: [
     CommonModule,
     OwnerRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ]
 })

@@ -1,6 +1,18 @@
-.A{
-    text-align: center;
-    height: 300px;
-    width: 500px;
-    background-color: cornsilk;
+.container-home{
+    background-image: url('/assets/img/ownerhome.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
+
+    .btn{
+        color:black;
+        background-color: rgb(235, 68, 199);
+        position: relative;
+        top :25px
+    }
+    a:hover{
+        color: rgb(76, 240, 35);
+        text-align: right;
+        top: 25px;
+    }

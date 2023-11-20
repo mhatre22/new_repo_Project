@@ -24,6 +24,7 @@ export class HomeComponent {
   user(){
       this.router.navigateByUrl('user');
     }
+ 
   }
 
 
