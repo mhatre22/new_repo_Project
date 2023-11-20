@@ -1,1 +1,57 @@
-<p>owner-signup works!</p>
+<div class="ownersignup">
+    
+        <mat-card-header class="head">OwnerSignup</mat-card-header>
+  
+            <form class="signup" [formGroup]="signup">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" placeholder="Name">
+                </mat-form-field> &nbsp;
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Email">
+                </mat-form-field> <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Contact Number</mat-label>
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input matInput placeholder="555-555-1234" formControlName="mobNo">
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field> &nbsp;
+                <mat-form-field class="example-full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="userName" placeholder="userName">
+                </mat-form-field><br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="on">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field> &nbsp;
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmpassword"autocomplete="on" >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field><br>
+        
+                <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                    <mat-radio-button value="Other">Other</mat-radio-button>
+                </mat-radio-group><br>
+                <mat-form-field>
+                    <mat-label>Enter Birthdate</mat-label>
+                    <mat-date-range-input [rangePicker]="picker" formControlName="birthdate">
+                      <input matStartDate placeholder="Start date">
+                      <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  
+                </mat-form-field>
+    </div>
