@@ -1,7 +1,15 @@
 {
-  "admin": [],
-  "owner": [ ],
-  "user": [],
-  "hotel details" :[]
+  "admin": [
+
+  ],
+  "owner": [ 
+
+  ],
+  "user": [
+
+  ],
+  "hotel details":[
+
+  ]
   
 }
