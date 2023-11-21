@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./owner-signup.component.scss']
 })
 export class OwnerSignupComponent {
+submitted: boolean=false;
 constructor(private router:Router,
   private fb:FormBuilder){}
-signup!:FormGroup;
+signupform!:FormGroup;
+hide = true;
+
 ngOnInit(){
-  this.signup=this.fb.group({
+  this.signupform=this.fb.group({
    name:['',[Validators.required]] ,
    email:['',[Validators.required]],
    mobNo:['',[Validators.required]],
@@ -20,10 +23,28 @@ ngOnInit(){
    gender:['',[Validators.required]],
    password:['',[Validators.required]],
    confirmpassword:['',[Validators.required]],
-   birthdate:['',[Validators.required]]
+  
   })
 }
-hide = true;
+submit(formData:any){
+  console.log(formData);
+  this.submitted=true;
+  if(this.signupform.valid){
+    return;
+  }
+  const myTimeout = setTimeout(signupform, 0.5000);
+
+  function signupform() {
+    alert('Succesfully Signup!!!!') ;
+  
+  }
+  this.router.navigateByUrl('/owner/ownerlogin');
+}
+Onreset(){
+this.submitted=false;
+this.signupform.reset()
+}
+
 
 
 
