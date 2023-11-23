@@ -1,0 +1,33 @@
+<div class="ownerlogin"><br><br>
+    <div class="login-img"><br><br>
+        <form [formGroup]="loginform" class="login"><br>
+            <h1 class="font">
+                <marquee scrollamount="20"><b><u>Owner Login Page Here!!!</u></b></marquee>
+            </h1>
+            <mat-form-field class="example-full-width">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="userName">
+                <mat-error class="err" *ngIf="loginform.get('userName')?.errors?.['required']">UserName Is<b>Required</b> </mat-error>
+
+            </mat-form-field><br>
+<mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input matInput [type]="showPassword ? 'text' : 'password' " formControlName="password">
+    <mat-icon mat-icon-button matSuffix (click)="passwordvisiblity()" *ngIf="!showPassword">visibility_off</mat-icon>
+    <mat-icon  mat-icon-button matSuffix (click)="passwordvisiblity()" *ngIf="showPassword">visibility</mat-icon>
+    <mat-error class="err" *ngIf="loginform.get('password')?.errors?.['required']"> Password is <b>Required</b></mat-error>
+</mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Confirm Password</mat-label>
+                <input  matInput [type]="showconfirmPassword ? 'text' : 'password' " formControlName="confirmPassword" >
+                <mat-icon mat-icon-button matSuffix (click)="confirmpasswordvisiblity()" *ngIf="!showconfirmPassword">visibility_off</mat-icon>
+                <mat-icon  mat-icon-button matSuffix (click)="confirmpasswordvisiblity()" *ngIf="showconfirmPassword">visibility</mat-icon>
+                <mat-error class="err" *ngIf="loginform.get('confirmPassword')?.errors?.['required']"> confirm Password is <b>Required</b></mat-error>
+                <mat-error *ngIf="!passwordMismatchError">Passwords do not match.</mat-error>
+            </mat-form-field><br>
+            <button  mat-raised-button color="primary" (click)="submit(loginform.value)">Login Here</button> &nbsp;
+            <button (click)="signup()" mat-raised-button color="warn"> New User ?</button>
+        </form>
+     </div>
+</div> 
+

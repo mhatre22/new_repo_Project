@@ -1,54 +1,65 @@
-
 <div class="bg-img">
-
-<mat-card class="example-card">&nbsp;
-<div class="ownersignup">
-<br>
-        &nbsp;<mat-card-header class="head"><b><u>OwnerSignup</u></b></mat-card-header><br>
-        <mat-card-content><br>
-            <form class="signupform" [formGroup]="signupform">
+    <mat-card class="example-card"> &nbsp;
+        <div class="ownersignup">
+            &nbsp;<h1 class="head">
+                <marquee scrollamount="20"><b><u>Owner Signup Page Here!!!</u></b></marquee></h1>
+            <mat-card-content>
+                <form class="signupform" [formGroup]="signupform">
                 <mat-form-field class="example-full-width">
                     <mat-label>Name</mat-label>
-                    <input matInput formControlName="name" placeholder="Name">
+                    <input matInput formControlName="name" placeholder="Name" autocomplete="on">
+                    <mat-error *ngIf="signupform.get('name')?.errors?.['required']">Name Is <b>Required</b></mat-error>
+                    <mat-error class="err" *ngIf="signupform.get('name')?.errors?.['pattern'] && signupform.get('name')?.touched">Enter Valid Name!!!</mat-error>
                 </mat-form-field><br>
                 <mat-form-field class="example-full-width">
                     <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" placeholder="Email">
+                    <input matInput formControlName="email" placeholder="pat@example.com" autocomplete="on">
+                    <mat-error *ngIf="signupform.get('email')?.errors?.['required']">Email ID Is <b>Required</b></mat-error>
+                    <mat-error class="err" *ngIf="signupform.get('email')?.errors?.['email'] && signupform.get('email')?.touched">Enter Valid Email ID</mat-error>
                 </mat-form-field> <br>
                 <mat-form-field class="example-full-width">
                     <mat-label>Contact Number</mat-label>
                     <span matPrefix>+91 &nbsp;</span>
-                    <input matInput placeholder="555-555-1234" formControlName="mobNo">
-                    <mat-icon matSuffix>mode_edit</mat-icon>
+                    <input matInput placeholder="555-555-1234" formControlName="mobNo" autocomplete="on">
+                    <mat-error *ngIf="signupform.get('mobNo')?.errors?.['required']">Contact Number Is <b>Required</b></mat-error>
+                    <mat-error class="err" *ngIf="signupform.get('mobNo')?.errors?.['pattern']">Enter Only Number</mat-error>
+                    <mat-error  class="err"  *ngIf="signupform.get('mobNo')?.errors?.['minlength']">Contact number must be at least 10 digits long.</mat-error>
+                    <!-------- <mat-error class="err" *ngIf="signupform.get('mobNo')?.errors?.['maxlength'] && !signupform.get('mobNo')?.errors?.['minlength'].touched">Contact number cannot exceed 10 digits
+                     </mat-error>--->
+ 
+
+                  
                 </mat-form-field> <br>
-                
                 <mat-form-field class="example-full-width">
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" autocomplete="on">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="name" placeholder="Username" autocomplete="on">
                 </mat-form-field><br>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Confirm password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmpassword" autocomplete="on">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="showPassword ? 'text' : 'password' " formControlName="password" placeholder="password" autocomplete="on">
+                    <mat-icon mat-icon-button matSuffix (click)="passwordvisiblity()" *ngIf="!showPassword">visibility_off</mat-icon>
+                    <mat-icon mat-icon-button matSuffix (click)="passwordvisiblity()" *ngIf="showPassword">visibility</mat-icon>
                 </mat-form-field><br>
-        
-                <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [type]="showconfirmPassword ? 'text' : 'password'" formControlName="confirmPassword" placeholder="confirmPassword" autocomplete="on">
+                    <mat-icon mat-icon-button matSuffix (click)="confirmpasswordvisiblity()" *ngIf="!showconfirmPassword">visibility_off</mat-icon>
+                    <mat-icon mat-icon-button matSuffix (click)="confirmpasswordvisiblity()"  *ngIf="showconfirmPassword">visibility</mat-icon>
+                </mat-form-field>
+        <mat-card class="example-full-width">
+                <mat-radio-group aria-label="Select an option" formControlName="gender" autocomplete="on">
                     <mat-radio-button value="Male">Male</mat-radio-button>
                     <mat-radio-button value="Female">Female</mat-radio-button>
                     <mat-radio-button value="Other">Other</mat-radio-button>
-                </mat-radio-group><br>
+                </mat-radio-group></mat-card><br>
                  <button mat-raised-button color="primary" (click)="submit(signupform.value)"><u>Register</u></button>&nbsp;
                  <button mat-raised-button color="warn"   (click)="Onreset()" ><u>Cancel</u></button> &nbsp;
+                 <button  mat-raised-button color="primary" routerLink="/owner/ownerhome"><u>Back</u>  </button>
             </form>
-        </mat-card-content>
-    </div>
-        </mat-card>
+            </mat-card-content>
+            </div>
+            </mat-card>
+         
 
-    </div>
+
+            

@@ -1,13 +1,15 @@
 .head{
-
-   font-size: large;
-  size: 50px;
+   font-size: 25px;
+   font-style: italic;
+   color: red;
+ 
+ 
 
   color: rgb(11, 11, 12);
 }
 .ownersignup{
     background-image: url('/assets/img/frames-for-your-heart-FqqiAvJejto-unsplash.jpg');
-    height:60%;
+    height:50%;
     background-repeat: no-repeat;
     background-size: cover;
    
@@ -22,13 +24,17 @@
   font-size: large;
   }
   .mat-mdc-radio-button ~ .mat-mdc-radio-button {
-    margin-left: 16px;
+    margin-left: 8px;
     font-size: larger;
 }
 .example-card {
-  max-width: 1000px;
+  max-width: 900px;
 }
 .bg-img{
   background-image: url('/assets/img/ownerlogin.jpg');
   height: 100%;
+}
+.center{
+  text-align: center;
+  margin-top: 2px;
 }

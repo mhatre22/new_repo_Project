@@ -9,20 +9,21 @@ import { Router } from '@angular/router';
 })
 export class OwnerSignupComponent {
 submitted: boolean=false;
+  showPassword: boolean =true;
+  showconfirmPassword: boolean=false;
 constructor(private router:Router,
   private fb:FormBuilder){}
 signupform!:FormGroup;
-hide = true;
 
 ngOnInit(){
   this.signupform=this.fb.group({
-   name:['',[Validators.required]] ,
-   email:['',[Validators.required]],
-   mobNo:['',[Validators.required]],
-   userName:['',[Validators.required]],
+ name:['',[Validators.required,Validators.pattern("[A-aZ-s]*$")]], 
+   email:['',[Validators.required, Validators.email]],
+   mobNo:['',[Validators.required,Validators.pattern("[0-9]*$"),Validators.minLength(10)],Validators.maxLength(10)],
+   username:['',[Validators.required]],
    gender:['',[Validators.required]],
    password:['',[Validators.required]],
-   confirmpassword:['',[Validators.required]],
+   confirmPassword:['',[Validators.required]],
   
   })
 }
@@ -44,8 +45,12 @@ Onreset(){
 this.submitted=false;
 this.signupform.reset()
 }
-
-
+passwordvisiblity(){
+  this.showPassword = ! this.showPassword
+}
+confirmpasswordvisiblity(){
+  this.showconfirmPassword = !this.showconfirmPassword
+}
 
 
 }
