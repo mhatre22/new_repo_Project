@@ -27,7 +27,7 @@ ngOnInit(){
 }
 submit(formData:any){
 console.log(formData);
-this.route.navigateByUrl('/owner/ownerhome');
+this.route.navigateByUrl('/owner/ownersucees');
 }
 
 signup(){
@@ -56,6 +56,9 @@ if(password == confirmPassword){
   return{'mismatch' : true}
 }
 
+}
+back(){
+  this.route.navigateByUrl('/owner/ownerhome');
 }
 
 }
