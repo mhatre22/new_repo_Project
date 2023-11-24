@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
+import { StoringDataService } from 'src/app/storing-data.service';
 
 
 @Component({
@@ -13,22 +14,31 @@ export class OwnerLoginComponent {
   showPassword: boolean =false;
   showconfirmPassword: boolean =false;
   passwordMismatchError : boolean =false;
+  userNamefront! : string
 constructor(private route:Router,
   private commonservice : CommonService,
-  private fb:FormBuilder){}
+  private fb:FormBuilder,
+  private storingdataservice :StoringDataService){}
   loginform! : FormGroup
 ngOnInit(){
+  this.frontpagename()
   this.loginform = this.fb.group({
     userName:['',[Validators.required]],
     password:['',[Validators.required]],
-    confirmPassword:['',[Validators.required]]
+    confirmPassword:['',[Validators.required]],
+   
+
   },{validators : this.passwordMatchValidator});
   
+}
+frontpagename(){
+  this.userNamefront = this.storingdataservice.Username;
 }
 submit(formData:any){
 console.log(formData);
 this.route.navigateByUrl('/owner/ownersucees');
 }
+
 
 signup(){
   this.route.navigateByUrl('owner/ownersignup');
@@ -62,4 +72,5 @@ back(){
 }
 
 }
+
 
