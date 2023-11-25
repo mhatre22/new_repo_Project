@@ -31,7 +31,7 @@ ngOnInit(){
 
 signFormControlls(){
   this.signupform=this.fb.group({
-    name:['',[Validators.required,Validators.pattern("[A-aZ-s]*$")]], 
+    name:['',[Validators.required,Validators.pattern( /^[a-zA-Z\s]*$/)]], 
       email:['',[Validators.required, Validators.email]],
       mobNo:['',[Validators.required,Validators.pattern("[0-9]*$")]],
       username:['',[Validators.required,Validators.pattern('^[a-zA-Z@0-9-]*$')]],
@@ -41,24 +41,23 @@ signFormControlls(){
      },{validators: this.passwordMatchValidator});
 }
 
-submit(formData:any){
-  console.log(formData);
-  this.submitted=true;
-  if(this.signupform.valid){
-    this.storingdataservice.postApicall(this.signupform.value).subscribe(responce =>{
-      this.signupForm = responce;
-    })
-    this.router.navigateByUrl('/owner/ownerlogin');
-this.toster.success("You have Signup Successfully !!!")
-
-  
+  submit(){
+    console.log(this.signupform.value);
+    if(this.signupForm.valid) {
+      this.storingdataservice.postApicall(this.signupForm.value).subscribe((res)=>{
+        this.signupForm = res;
+        this.toster.success('Registered Successfully !!')
+        this.router.navigateByUrl('owner/ownerlogin');
+      });
+    }else {
+      this.toster.warning("please enter valid data ")
   }
 
-}
-Onreset(){
-this.submitted=false;
-this.signupform.reset()
-}
+  }
+  Onreset(){
+    this.submitted=false;
+    this.signupform.reset()
+    }
 passwordvisiblity(){
   this.showPassword = ! this.showPassword
 }

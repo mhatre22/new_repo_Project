@@ -20,6 +20,46 @@
       "password": "4567",
       "confirmPassword": "4567",
       "id": 2
+    },
+    {
+      "name": "Apeksha",
+      "email": "apu@gmail.com",
+      "mobNo": "9546875146",
+      "username": "Apu@3",
+      "gender": "Female",
+      "password": "789",
+      "confirmPassword": "789",
+      "id": 3
+    },
+    {
+      "name": "Sangeeta",
+      "email": "sangeeta@gmail.com",
+      "mobNo": "9546215478",
+      "username": "san@2",
+      "gender": "Female",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 4
+    },
+    {
+      "name": "Snehal",
+      "email": "sne@gmail.com",
+      "mobNo": "7894562123",
+      "username": "Sne@22",
+      "gender": "Female",
+      "password": "4567",
+      "confirmPassword": "4567",
+      "id": 5
+    },
+    {
+      "name": "geeta",
+      "email": "geeta@gmail.com",
+      "mobNo": "7894561236",
+      "username": "geeta@22",
+      "gender": "Female",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 6
     }
   ],
   "user": [],
