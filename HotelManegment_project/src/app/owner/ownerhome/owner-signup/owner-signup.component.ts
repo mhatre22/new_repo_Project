@@ -17,7 +17,7 @@ submitted: boolean=false;
 constructor(private router:Router,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService,
-  private toster :ToastrService
+  private toastr :ToastrService
 
  ){}
 signupform!:FormGroup;
@@ -42,16 +42,16 @@ signFormControlls(){
 }
 
   submit(formData :any){
-    console.log(formData);
+    console.log(formData)
     if(this.signupform.valid){
-      this.storingdataservice.postApicall(this.signupForm.value).subscribe((res)=>{
-        this.signupForm = res;
-       this.router.navigateByUrl('owner/ownerlogin');
-     
-      });
-
+      this.storingdataservice.postApicall(this.signupform.value).subscribe(res=>{
+      this.toastr.success("SignUp Sucessfully !!!!");
+      })
+    }else{
+      this.toastr.warning("Enter valid data");
+    }
+    this.router.navigateByUrl('/owner/ownerlogin');
   }
-}
   Onreset(){
     this.submitted=false;
     this.signupform.reset()

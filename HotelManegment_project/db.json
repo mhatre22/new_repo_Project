@@ -60,6 +60,36 @@
       "password": "123456",
       "confirmPassword": "123456",
       "id": 6
+    },
+    {
+      "name": "smita",
+      "email": "smita@gmail.com",
+      "mobNo": "2597542156",
+      "username": "Smita@22",
+      "gender": "Female",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 7
+    },
+    {
+      "name": "suresh",
+      "email": "suresh@gmail.com",
+      "mobNo": "9854126321",
+      "username": "suresh@2",
+      "gender": "Male",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 8
+    },
+    {
+      "name": "megha",
+      "email": "megha@gmail.com",
+      "mobNo": "1234567894",
+      "username": "megha@22",
+      "gender": "Female",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 9
     }
   ],
   "user": [],
