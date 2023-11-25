@@ -16,9 +16,6 @@ hotelregister(){
 this.route.navigateByUrl('owner/hotelregister');
 
 }
-ngOnInit(){
- this.userName = this.storingdataservice.Usernamefront ;
-  }
-}
+
 
 
