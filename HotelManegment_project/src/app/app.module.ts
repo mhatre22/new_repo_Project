@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './owner/ownerhome/owner-login/common/shared/shared.module';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +20,9 @@ import { SharedModule } from './owner/ownerhome/owner-login/common/shared/shared
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    ToastrModule,
+    HttpClientModule
     
   ],
   providers: [],

@@ -14,14 +14,14 @@ export class OwnerLoginComponent {
   showPassword: boolean =false;
   showconfirmPassword: boolean =false;
   passwordMismatchError : boolean =false;
-  userNamefront! : string
+
 constructor(private route:Router,
   private commonservice : CommonService,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService){}
   loginform! : FormGroup
 ngOnInit(){
-  this.frontpagename()
+
   this.loginform = this.fb.group({
     userName:['',[Validators.required]],
     password:['',[Validators.required]],
@@ -31,9 +31,7 @@ ngOnInit(){
   },{validators : this.passwordMatchValidator});
   
 }
-frontpagename(){
-  this.userNamefront = this.storingdataservice.Username;
-}
+
 submit(formData:any){
 console.log(formData);
 this.route.navigateByUrl('/owner/ownersucees');

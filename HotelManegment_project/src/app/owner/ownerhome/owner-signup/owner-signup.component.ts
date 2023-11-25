@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StoringDataService } from 'src/app/storing-data.service';
 
 @Component({
   selector: 'app-owner-signup',
@@ -13,8 +14,13 @@ submitted: boolean=false;
   showconfirmPassword: boolean=false;
   passwordMismatchError :boolean =false;
 constructor(private router:Router,
-  private fb:FormBuilder){}
+  private fb:FormBuilder,
+  private storingdataservice :StoringDataService
+ ){}
 signupform!:FormGroup;
+data : any;
+signupForm : any;
+endpoint : any;
 ngOnInit(){
   this.signFormControlls()
   
@@ -36,6 +42,7 @@ submit(formData:any){
   console.log(formData);
   this.submitted=true;
   if(this.signupform.valid){
+
     return;
   }
   const myTimeout = setTimeout(signupform, 0.5000);
@@ -44,6 +51,9 @@ submit(formData:any){
     alert('Succesfully Signup!!!!') ;
   
   }
+  this.storingdataservice.postApicall(this.endpoint,this.signupform.value).subscribe(responce =>{
+    this.signupForm = responce;
+  })
   this.router.navigateByUrl('/owner/ownerlogin');
 }
 Onreset(){
@@ -72,6 +82,5 @@ if(password == confirmPassword){
 }
 }
 
-
-
 }
+

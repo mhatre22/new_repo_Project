@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [],
   imports: [
@@ -19,7 +21,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatInputModule,
     MatIconModule,
 MatRadioModule,
-MatDatepickerModule
+MatDatepickerModule,
+ToastrModule,
+HttpClientModule
   ],
   exports:[
     MatCardModule,
@@ -29,7 +33,9 @@ MatDatepickerModule
     MatInputModule,
     MatIconModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ToastrModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
