@@ -9,6 +9,7 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 MatRadioModule,
 MatDatepickerModule,
 ToastrModule,
+
 
   ],
   exports:[

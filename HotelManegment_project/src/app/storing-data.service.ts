@@ -13,6 +13,6 @@ constructor ( private http :HttpClient,
   private toster: ToastrService){}
 postApicall(formData :any){
 
-  return this.http.post(this.ownerurl, formData);
+  return this.http.post(this.ownerurl,formData);
 }
 }

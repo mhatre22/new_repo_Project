@@ -15,7 +15,7 @@ export class OwnerLoginComponent {
   showconfirmPassword: boolean =false;
   passwordMismatchError : boolean =false;
 
-constructor(private route:Router,
+constructor(private router:Router,
   private commonservice : CommonService,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService){}
@@ -34,12 +34,12 @@ ngOnInit(){
 
 submit(formData:any){
 console.log(formData);
-this.route.navigateByUrl('/owner/ownersucees');
+this.router.navigateByUrl('/owner/ownersucees');
 }
 
 
 signup(){
-  this.route.navigateByUrl('owner/ownersignup');
+  this.router.navigateByUrl('owner/ownersignup');
 }
 passwordvisiblity(){
   this.showPassword =!this.showPassword;
@@ -66,7 +66,7 @@ if(password == confirmPassword){
 
 }
 back(){
-  this.route.navigateByUrl('/owner/ownerhome');
+  this.router.navigateByUrl('/owner/ownerhome');
 }
 
 }

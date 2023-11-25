@@ -41,19 +41,17 @@ signFormControlls(){
      },{validators: this.passwordMatchValidator});
 }
 
-  submit(){
-    console.log(this.signupform.value);
-    if(this.signupForm.valid) {
+  submit(formData :any){
+    console.log(formData);
+    if(this.signupform.valid){
       this.storingdataservice.postApicall(this.signupForm.value).subscribe((res)=>{
         this.signupForm = res;
-        this.toster.success('Registered Successfully !!')
-        this.router.navigateByUrl('owner/ownerlogin');
+       this.router.navigateByUrl('owner/ownerlogin');
+     
       });
-    }else {
-      this.toster.warning("please enter valid data ")
-  }
 
   }
+}
   Onreset(){
     this.submitted=false;
     this.signupform.reset()
