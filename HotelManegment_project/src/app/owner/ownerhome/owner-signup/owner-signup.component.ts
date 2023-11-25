@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { StoringDataService } from 'src/app/storing-data.service';
 
 @Component({
@@ -15,7 +16,9 @@ submitted: boolean=false;
   passwordMismatchError :boolean =false;
 constructor(private router:Router,
   private fb:FormBuilder,
-  private storingdataservice :StoringDataService
+  private storingdataservice :StoringDataService,
+  private toster :ToastrService
+
  ){}
 signupform!:FormGroup;
 data : any;
@@ -42,19 +45,15 @@ submit(formData:any){
   console.log(formData);
   this.submitted=true;
   if(this.signupform.valid){
+    this.storingdataservice.postApicall(this.signupform.value).subscribe(responce =>{
+      this.signupForm = responce;
+    })
+    this.router.navigateByUrl('/owner/ownerlogin');
+this.toster.success("You have Signup Successfully !!!")
 
-    return;
-  }
-  const myTimeout = setTimeout(signupform, 0.5000);
-
-  function signupform() {
-    alert('Succesfully Signup!!!!') ;
   
   }
-  this.storingdataservice.postApicall(this.endpoint,this.signupform.value).subscribe(responce =>{
-    this.signupForm = responce;
-  })
-  this.router.navigateByUrl('/owner/ownerlogin');
+
 }
 Onreset(){
 this.submitted=false;

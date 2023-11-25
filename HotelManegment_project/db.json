@@ -1,15 +1,27 @@
 {
-  "admin": [
-
+  "admin": [],
+  "owner": [
+    {
+      "name": "snehal",
+      "email": "mhatre@gmail.com",
+      "mobNo": "7894561231",
+      "username": "mhatre@2",
+      "gender": "Female",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 1
+    },
+    {
+      "name": "bala",
+      "email": "bala@gmail.com",
+      "mobNo": "9456123789",
+      "username": "bala@22",
+      "gender": "Male",
+      "password": "4567",
+      "confirmPassword": "4567",
+      "id": 2
+    }
   ],
-  "owner": [ 
-
-  ],
-  "user": [
-
-  ],
-  "hotel details":[
-
-  ]
-  
+  "user": [],
+  "hotel details": []
 }

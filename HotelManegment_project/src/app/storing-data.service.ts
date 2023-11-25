@@ -1,16 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoringDataService {
-url = "http://localhost:3000";
-endpoint = "owner";
-data : any;
-constructor ( private http :HttpClient){}
-postApicall(endpoint :string,data :any){
-  let url = this.url + endpoint;
-  return this.http.post(url,data)
+ownerurl = "http://localhost:3000/owner";
+
+
+constructor ( private http :HttpClient,
+  private toster: ToastrService){}
+postApicall(formData :any){
+
+  return this.http.post(this.ownerurl, formData);
 }
 }

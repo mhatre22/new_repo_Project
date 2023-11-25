@@ -9,7 +9,7 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 MatRadioModule,
 MatDatepickerModule,
 ToastrModule,
-HttpClientModule
+
   ],
   exports:[
     MatCardModule,
@@ -35,7 +35,7 @@ HttpClientModule
     MatRadioModule,
     MatDatepickerModule,
     ToastrModule,
-    HttpClientModule
+
   ]
 })
 export class SharedModule { }

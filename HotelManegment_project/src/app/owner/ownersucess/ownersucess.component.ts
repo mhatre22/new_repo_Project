@@ -19,3 +19,4 @@ this.route.navigateByUrl('owner/hotelregister');
 
 
 
+}
