@@ -27,36 +27,39 @@ constructor(private router:Router,
   loginresult : any ;
 ngOnInit(){
 
-  this.loginform = this.fb.group({
-    username:['',[Validators.required]],
-    password:['',[Validators.required]],
-    confirmPassword:['',[Validators.required]],
+  this.loginform = this.fb.group ({
+    id: this.fb.control('', (Validators.required)),
+    username: this.fb.control('',(Validators.required)),
+    password: this.fb.control('',(Validators.required)),
+    confirmPassword: this.fb.control('',(Validators.required)),
    
-
   },{validators : this.passwordMatchValidator});
+
   
 }
 
+
 submit(formData:any){
 console.log(formData);
-
 if (this.loginform.valid){
   this.storingdataservice.getOwnerById(this.loginform.value.id).subscribe(res=>{
     this.loginresult = res ;
-    this.toaster.success(`welcome ${this.result.id}`,'Login Successfully !!')
-    this.router.navigateByUrl('/owner/ownersucees');
+   
     
   });
    if(this.result.password === this.loginform.value.password){
     sessionStorage.setItem('username', this.result.id);
     sessionStorage.setItem('password', this.result.password);
     sessionStorage.setItem('confirmPassword', this.result.confirmPassword);
+    this.router.navigateByUrl('/owner/ownersucees');
+    this.toaster.success(`welcome  ${this.result.id}`,'Login Successfully !!')
    }else{
     this.toaster.error('Invalid Password')
    }
   }else{
     this.toaster.warning('Please enter valid data.')
    }
+
 }
 signup(){
   this.router.navigateByUrl('owner/ownersignup');
@@ -89,6 +92,5 @@ back(){
   this.router.navigateByUrl('/owner/ownerhome');
 }
 
+
 }
-
-

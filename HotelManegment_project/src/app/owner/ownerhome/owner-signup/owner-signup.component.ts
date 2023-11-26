@@ -33,13 +33,13 @@ ngOnInit(){
 
 signFormControlls(){
   this.signupform=this.fb.group({
-    name:['',[Validators.required,Validators.pattern( /^[a-zA-Z\s]*$/)]], 
-      email:['',[Validators.required, Validators.email]],
-      mobNo:['',[Validators.required,Validators.pattern("[0-9]*$")]],
-      username:['',[Validators.required,Validators.pattern('^[a-zA-Z@0-9-]*$')]],
-      gender:['',[Validators.required]],
-      password:['',[Validators.required]],
-      confirmPassword:['',[Validators.required]],
+    name: this.fb.control('',(Validators.required,Validators.pattern( /^[a-zA-Z\s]*$/))), 
+      email: this.fb.control('',(Validators.required, Validators.email)), 
+      mobNo: this.fb.control('',(Validators.required,Validators.pattern("[0-9]*$"))), 
+      username: this.fb.control('',(Validators.required,Validators.pattern('^[a-zA-Z@0-9-]*$'))), 
+      gender: this.fb.control('',(Validators.required)),
+      password :this.fb.control('',(Validators.required)),
+      confirmPassword:this.fb.control ('',(Validators.required)),
      },{validators: this.passwordMatchValidator});
 }
 
@@ -52,10 +52,10 @@ signFormControlls(){
     }
     if(this.signupform.valid){
     this.router.navigateByUrl('/owner/ownerlogin');
-    this.toaster.success( 'SignUp Successfully !!!', 'Congratulations')
+  
 
   }else{
-    this.toaster.warning('Enter valid data')
+    this.toaster.success( 'SignUp Successfully !!!', 'Congratulations')
   }
 }
   Onreset(){
