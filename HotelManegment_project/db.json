@@ -90,6 +90,56 @@
       "password": "123",
       "confirmPassword": "123",
       "id": 9
+    },
+    {
+      "name": "megha",
+      "email": "megha@gmail.com",
+      "mobNo": "1234567894",
+      "username": "megha@22",
+      "gender": "Female",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 10
+    },
+    {
+      "name": "snehal",
+      "email": "sne@gmail.com",
+      "mobNo": "9546321589",
+      "username": "Snehal@2",
+      "gender": "Female",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 11
+    },
+    {
+      "name": "Snehal",
+      "email": "sne@gmail.com",
+      "mobNo": "9546321575",
+      "username": "sne@222",
+      "gender": "Female",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 12
+    },
+    {
+      "name": "sita",
+      "email": "sita@gmail.com",
+      "mobNo": "9521456987",
+      "username": "sita@22",
+      "gender": "Female",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 13
+    },
+    {
+      "name": "sita",
+      "email": "sita@gmail.com",
+      "mobNo": "9562145698",
+      "username": "sita@22",
+      "gender": "Female",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 14
     }
   ],
   "user": [],

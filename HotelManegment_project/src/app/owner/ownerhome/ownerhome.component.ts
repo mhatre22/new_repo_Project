@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class OwnerhomeComponent {
   constructor(private router:Router){}
+  search! : string
   login(){
     this.router.navigateByUrl('owner/ownerlogin');
   }

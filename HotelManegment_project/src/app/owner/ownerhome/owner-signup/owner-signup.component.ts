@@ -10,6 +10,7 @@ import { StoringDataService } from 'src/app/storing-data.service';
   styleUrls: ['./owner-signup.component.scss']
 })
 export class OwnerSignupComponent {
+
 submitted: boolean=false;
   showPassword: boolean =true;
   showconfirmPassword: boolean=false;
@@ -17,7 +18,7 @@ submitted: boolean=false;
 constructor(private router:Router,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService,
-  private toastr :ToastrService
+  private toaster :ToastrService
 
  ){}
 signupform!:FormGroup;
@@ -26,6 +27,7 @@ signupForm : any;
 endpoint : any;
 ngOnInit(){
   this.signFormControlls()
+
   
 }
 
@@ -45,13 +47,17 @@ signFormControlls(){
     console.log(formData)
     if(this.signupform.valid){
       this.storingdataservice.postApicall(this.signupform.value).subscribe(res=>{
-      this.toastr.success("SignUp Sucessfully !!!!");
+        this.signupForm =res;
       })
-    }else{
-      this.toastr.warning("Enter valid data");
     }
+    if(this.signupform.valid){
     this.router.navigateByUrl('/owner/ownerlogin');
+    this.toaster.success( 'SignUp Successfully !!!', 'Congratulations')
+
+  }else{
+    this.toaster.warning('Enter valid data')
   }
+}
   Onreset(){
     this.submitted=false;
     this.signupform.reset()
@@ -62,6 +68,7 @@ passwordvisiblity(){
 confirmpasswordvisiblity(){
   this.showconfirmPassword = !this.showconfirmPassword
 }
+
 
 get confirmPasword(){
   return this.signupform.get('confirmPassword');
@@ -78,5 +85,13 @@ if(password == confirmPassword){
 }
 }
 
+}
+
+function showToasterSuccess() {
+  throw new Error('Function not implemented.');
+}
+
+function success() {
+  throw new Error('Function not implemented.');
 }
 

@@ -13,6 +13,7 @@ export class HomeComponent {
   constructor(private router: Router,
     private commonService: CommonService
    ) { }
+   search! :string;
   admin(){
       this.router.navigateByUrl('admin');
     }

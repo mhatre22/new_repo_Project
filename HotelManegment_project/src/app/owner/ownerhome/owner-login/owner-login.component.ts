@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CommonService } from 'src/app/common.service';
 import { StoringDataService } from 'src/app/storing-data.service';
 
@@ -14,16 +15,20 @@ export class OwnerLoginComponent {
   showPassword: boolean =false;
   showconfirmPassword: boolean =false;
   passwordMismatchError : boolean =false;
+  result: any;
 
 constructor(private router:Router,
   private commonservice : CommonService,
+  private toaster :ToastrService,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService){}
   loginform! : FormGroup
+
+  loginresult : any ;
 ngOnInit(){
 
   this.loginform = this.fb.group({
-    userName:['',[Validators.required]],
+    username:['',[Validators.required]],
     password:['',[Validators.required]],
     confirmPassword:['',[Validators.required]],
    
@@ -34,10 +39,25 @@ ngOnInit(){
 
 submit(formData:any){
 console.log(formData);
-this.router.navigateByUrl('/owner/ownersucees');
+
+if (this.loginform.valid){
+  this.storingdataservice.getOwnerById(this.loginform.value.id).subscribe(res=>{
+    this.loginresult = res ;
+    this.toaster.success(`welcome ${this.result.id}`,'Login Successfully !!')
+    this.router.navigateByUrl('/owner/ownersucees');
+    
+  });
+   if(this.result.password === this.loginform.value.password){
+    sessionStorage.setItem('username', this.result.id);
+    sessionStorage.setItem('password', this.result.password);
+    sessionStorage.setItem('confirmPassword', this.result.confirmPassword);
+   }else{
+    this.toaster.error('Invalid Password')
+   }
+  }else{
+    this.toaster.warning('Please enter valid data.')
+   }
 }
-
-
 signup(){
   this.router.navigateByUrl('owner/ownersignup');
 }
