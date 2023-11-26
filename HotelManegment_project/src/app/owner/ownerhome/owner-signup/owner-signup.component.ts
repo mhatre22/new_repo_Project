@@ -52,10 +52,10 @@ signFormControlls(){
     }
     if(this.signupform.valid){
     this.router.navigateByUrl('/owner/ownerlogin');
-  
+    this.toaster.success( 'SignUp Successfully !!!', 'Congratulations')
 
   }else{
-    this.toaster.success( 'SignUp Successfully !!!', 'Congratulations')
+    this.toaster.warning('Enter valid data')
   }
 }
   Onreset(){

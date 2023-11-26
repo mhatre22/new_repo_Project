@@ -48,19 +48,23 @@ if (this.loginform.valid){
     
   });
    if(this.result.password === this.loginform.value.password){
-    sessionStorage.setItem('username', this.result.id);
+    sessionStorage.setItem('username', this.result.username);
     sessionStorage.setItem('password', this.result.password);
     sessionStorage.setItem('confirmPassword', this.result.confirmPassword);
-    this.router.navigateByUrl('/owner/ownersucees');
-    this.toaster.success(`welcome  ${this.result.id}`,'Login Successfully !!')
+  
+    this.toaster.warning('Please enter valid data.')
    }else{
     this.toaster.error('Invalid Password')
    }
   }else{
-    this.toaster.warning('Please enter valid data.')
-   }
 
+    this.toaster.success(`welcome  ${this.result.id}`,'Login Successfully !!')
+    this.router.navigateByUrl('/owner/ownersucees');
 }
+   }
+   
+
+
 signup(){
   this.router.navigateByUrl('owner/ownersignup');
 }
