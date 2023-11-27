@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,9 +19,8 @@ submitted: boolean=false;
 constructor(private router:Router,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService,
-  private toaster :ToastrService
-
- ){}
+  private toaster :ToastrService,
+  private http :HttpClient){}
 signupform!:FormGroup;
 data : any;
 signupForm : any;
@@ -46,9 +46,9 @@ signFormControlls(){
   submit(formData :any){
     console.log(formData)
     if(this.signupform.valid){
-      this.storingdataservice.postApicall(this.signupform.value).subscribe(res=>{
-        this.signupForm =res;
-      })
+      this.http.post<any>("http://localhost:3000/owner",this.signupform.value)
+      .subscribe(res=>{
+      });
     }
     if(this.signupform.valid){
     this.router.navigateByUrl('/owner/ownerlogin');

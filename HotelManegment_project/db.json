@@ -50,6 +50,26 @@
       "password": "12345",
       "confirmPassword": "12345",
       "id": 5
+    },
+    {
+      "name": "nalini",
+      "email": "n@gmail.com",
+      "mobNo": "963258741",
+      "username": "nalini",
+      "gender": "Female",
+      "password": "777",
+      "confirmPassword": "777",
+      "id": 6
+    },
+    {
+      "name": "deepika",
+      "email": "deep@gmail.com",
+      "mobNo": "9632587412",
+      "username": "deepika",
+      "gender": "Female",
+      "password": "777",
+      "confirmPassword": "777",
+      "id": 7
     }
   ],
   "user": [],

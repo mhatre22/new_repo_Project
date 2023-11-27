@@ -28,7 +28,7 @@
                 <mat-error class="err" *ngIf="loginform.get('confirmPassword')?.errors?.['required']"> confirm Password is <b>Required</b></mat-error>
                 <mat-error *ngIf="!passwordMismatchError">Passwords do not match.</mat-error>
             </mat-form-field><br>
-            <button  mat-raised-button color="primary" (click)="submit(loginform.value)"><u>Login Here</u></button> &nbsp;
+            <button  mat-raised-button color="primary" (click)="submit()"><u>Login Here</u></button> &nbsp;
             <button (click)="signup()" mat-raised-button color="warn"> <u>New User ?</u></button>
         </form>
      </div>

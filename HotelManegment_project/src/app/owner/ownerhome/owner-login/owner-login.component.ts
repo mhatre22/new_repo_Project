@@ -36,22 +36,25 @@ ngOnInit() : void{
   },{validators : this.passwordMatchValidator});
   
 }
-submit(formData:any){
-console.log(formData);
-this.storingdataservice.getApicall(this.loginform.value).subscribe(res=>{
-  const user = res;find((x:any)=>{
-    return x.username ===this.loginform.value.username && x.password === this.loginform.value.password && x.confirmPassword === this.loginform.value.confirmPassword
-  });
-  if (user !=null){
-    this.toaster.success('Login sucessfully')
-    this.router.navigateByUrl('/owner/ownersucees')
-  }else{
-    this.toaster.warning('user not found');
-  }
-})
-
-
+submit(){
+  this.http.get<any>("http://localhost:3000/owner").subscribe(res=>{
+    const user = res.find((username:any)=>{
+      return username.username === this.loginform.value.username && username.password === this.loginform.value.password && username.confirmPasword === this.loginform.value.confirmPassword
+    });
+    if(user){
+      alert('Login Succesful');
+      this.loginform.reset()
+    this.router.navigateByUrl('/owner/ownersucess')
+    }else{
+      alert("user not found")
+    }
+  },err=>{
+    alert("Something went wrong")
+  })
 }
+
+
+
 signup(){
   this.router.navigateByUrl('/owner/ownersignup');
 }
