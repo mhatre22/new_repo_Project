@@ -15,8 +15,8 @@ postApicall(formData :any){
 
   return this.http.post(this.ownerurl,formData);
 }
-getOwnerById(id :any){
-  return this.http.get(this.ownerurl+'/'+id)
+getById(formData:any){
+  return this.http.get( this.ownerurl + '/' + formData);
 }
 }
 

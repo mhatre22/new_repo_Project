@@ -1,8 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CommonService } from 'src/app/common.service';
+
 import { StoringDataService } from 'src/app/storing-data.service';
 
 
@@ -18,53 +19,43 @@ export class OwnerLoginComponent {
   result: any;
 
 constructor(private router:Router,
-  private commonservice : CommonService,
+  private http :HttpClient,
   private toaster :ToastrService,
   private fb:FormBuilder,
   private storingdataservice :StoringDataService){}
   loginform! : FormGroup
 
   loginresult : any ;
-ngOnInit(){
+ngOnInit() : void{
 
   this.loginform = this.fb.group ({
-    id: this.fb.control('', (Validators.required)),
     username: this.fb.control('',(Validators.required)),
     password: this.fb.control('',(Validators.required)),
     confirmPassword: this.fb.control('',(Validators.required)),
    
   },{validators : this.passwordMatchValidator});
-
   
 }
-
-
 submit(formData:any){
 console.log(formData);
-if (this.loginform.valid){
-  this.storingdataservice.getOwnerById(this.loginform.value.id).subscribe(res=>{
-    this.loginresult = res ;
-   
-    
-  });
-   if(this.result.password === this.loginform.value.password){
-    sessionStorage.setItem('username', this.result.username);
-    sessionStorage.setItem('password', this.result.password);
-    sessionStorage.setItem('confirmPassword', this.result.confirmPassword);
-  
-    this.toaster.warning('Please enter valid data.')
+this.storingdataservice.getById(this.loginform.value.username).subscribe(res=>{
+  this.loginresult =res;
+  console.log(this.loginresult);
+  if(this.loginresult.password === this.loginform.value.password){
+   if(this.loginresult.valid){
+    sessionStorage.setItem('username',this.loginresult.username);
+    sessionStorage.setItem('password',this.loginresult.password);
+    sessionStorage.setItem('confirmPassword',this.loginresult.confirmPassword);
    }else{
-    this.toaster.error('Invalid Password')
+    this.toaster.warning('Enter Valid data');
    }
   }else{
+    this.toaster.success('Congratulations','Login Successfully !!' );
+  
+  }
+});    this.router.navigateByUrl('/owner/ownersucees');
 
-    this.toaster.success(`welcome  ${this.result.id}`,'Login Successfully !!')
-    this.router.navigateByUrl('/owner/ownersucees');
 }
-   }
-   
-
-
 signup(){
   this.router.navigateByUrl('owner/ownersignup');
 }
