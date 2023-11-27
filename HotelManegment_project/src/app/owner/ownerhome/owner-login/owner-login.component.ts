@@ -31,29 +31,25 @@ ngOnInit() : void{
   this.loginform = this.fb.group ({
     username: this.fb.control('',(Validators.required)),
     password: this.fb.control('',(Validators.required)),
-    confirmPassword: this.fb.control('',(Validators.required)),
    
-  },{validators : this.passwordMatchValidator});
-  
+  });
+
 }
 submit(){
-  this.http.get<any>("http://localhost:3000/owner").subscribe(res=>{
-    const user = res.find((username:any)=>{
-      return username.username === this.loginform.value.username && username.password === this.loginform.value.password && username.confirmPasword === this.loginform.value.confirmPassword
-    });
+  this.http.get<any>("http://localhost:3000/owner").subscribe(result=>{
+    const user = result.find((a:any)=>{
+      return a.username === this.loginform.value.username && a.password === this.loginform.value.password ;
+
+  });
     if(user){
-      alert('Login Succesful');
+      this.toaster.success( 'Login Succesful',`Welcome ${this.loginform.value.username}`);
       this.loginform.reset()
-    this.router.navigateByUrl('/owner/ownersucess')
+      this.router.navigateByUrl('owner/ownersucees')
     }else{
-      alert("user not found")
+      this.toaster.warning("user not found")
     }
-  },err=>{
-    alert("Something went wrong")
-  })
+})
 }
-
-
 
 signup(){
   this.router.navigateByUrl('/owner/ownersignup');
@@ -70,25 +66,10 @@ get password(){
 get confirmPasword(){
   return this.loginform.get('confirmPassword');
 }
-passwordMatchValidator(loginform:FormGroup){
-  const password = loginform.get('password')?.value;
-  const confirmPassword = loginform.get('confirmPassword')?.value;
-if(password == confirmPassword){
-  loginform.controls['confirmPassword'].setErrors(null);
-  return null;
-}else{
-  loginform.controls['confirmPassword'].setErrors({'mismatch':true});
-  return{'mismatch' : true}
-}
 
-}
+
 back(){
   this.router.navigateByUrl('/owner/ownerhome');
 }
 
-
 }
-function find(arg0: (x: any) => boolean) {
-  throw new Error('Function not implemented.');
-}
-

@@ -70,6 +70,16 @@
       "password": "777",
       "confirmPassword": "777",
       "id": 7
+    },
+    {
+      "name": "bhavyansh",
+      "email": "bala@gmail.com",
+      "mobNo": "9632587415",
+      "username": "Bala",
+      "gender": "Male",
+      "password": "777",
+      "confirmPassword": "777",
+      "id": 8
     }
   ],
   "user": [],
