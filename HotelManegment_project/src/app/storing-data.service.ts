@@ -6,17 +6,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StoringDataService {
-ownerurl = "http://localhost:3000/owner";
+
 
 
 constructor ( private http :HttpClient,
 ){}
 postApicall(formData :any){
 
-  return this.http.post(this.ownerurl,formData);
+  return this.http.post( "http://localhost:3000/owner" ,formData);
 }
-getById(formData:any){
-  return this.http.get( this.ownerurl + '/' + formData);
+getApicall(formData:any){
+  return this.http.get( "http://localhost:3000/owner", formData);
 }
 }
 

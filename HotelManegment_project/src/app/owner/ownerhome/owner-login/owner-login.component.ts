@@ -38,26 +38,22 @@ ngOnInit() : void{
 }
 submit(formData:any){
 console.log(formData);
-this.storingdataservice.getById(this.loginform.value.username).subscribe(res=>{
-  this.loginresult =res;
-  console.log(this.loginresult);
-  if(this.loginresult.password === this.loginform.value.password){
-   if(this.loginresult.valid){
-    sessionStorage.setItem('username',this.loginresult.username);
-    sessionStorage.setItem('password',this.loginresult.password);
-    sessionStorage.setItem('confirmPassword',this.loginresult.confirmPassword);
-   }else{
-    this.toaster.warning('Enter Valid data');
-   }
+this.storingdataservice.getApicall(this.loginform.value).subscribe(res=>{
+  const user = res;find((x:any)=>{
+    return x.username ===this.loginform.value.username && x.password === this.loginform.value.password && x.confirmPassword === this.loginform.value.confirmPassword
+  });
+  if (user !=null){
+    this.toaster.success('Login sucessfully')
+    this.router.navigateByUrl('/owner/ownersucees')
   }else{
-    this.toaster.success('Congratulations','Login Successfully !!' );
-  
+    this.toaster.warning('user not found');
   }
-});    this.router.navigateByUrl('/owner/ownersucees');
+})
+
 
 }
 signup(){
-  this.router.navigateByUrl('owner/ownersignup');
+  this.router.navigateByUrl('/owner/ownersignup');
 }
 passwordvisiblity(){
   this.showPassword =!this.showPassword;
@@ -89,3 +85,7 @@ back(){
 
 
 }
+function find(arg0: (x: any) => boolean) {
+  throw new Error('Function not implemented.');
+}
+

@@ -25,7 +25,7 @@ signupform!:FormGroup;
 data : any;
 signupForm : any;
 endpoint : any;
-ngOnInit(){
+ngOnInit() : void{
   this.signFormControlls()
 
   
