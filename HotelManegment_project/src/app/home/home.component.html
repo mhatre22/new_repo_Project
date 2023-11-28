@@ -1,7 +1,59 @@
 
+
+
+
 <div class="container">
-<button (click)=admin() class="btn"><b><u>Admin</u></b></button>&nbsp;
-<button (click)=owner() class="btn"><b><u>Owner</u></b></button>&nbsp;
-<button (click)=user() class="btn"><b><u>User</u></b></button><br>
-<br> <br>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand"><marquee behavior="left" direction="50"><b><u>Hotel Booking.Com</u></b> <b class="bi bi-buildings"></b></marquee></a>
+              <form class="d-flex" role="search">
+                <button (click)=admin() class="btn"><b><u>Admin</u></b></button>&nbsp;
+                <button (click)=owner() class="btn"><b><u>Owner</u></b></button>&nbsp;
+                <button (click)=user() class="btn"><b><u>User</u></b></button> &nbsp;
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </nav><br><br><br><br>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" >
+      <img src="/assets/img/mumbai2.jpg" alt="Cinque Terre" width="350" height="150">
+     </a>
+    <div class="desc"><b><u>Mumbai</u></b></div>
+  </div>
+</div><br><br>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank">
+      <img src="/assets/img/goa2.jpg" alt="Forest" width="350" height="150">
+    </a>
+    <div class="desc"><b><u>Goa</u></b></div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_lights.jpg">
+      <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="img_mountains.jpg">
+      <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+    </a>
+    <div class="desc"><b><u></u></b></div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+
+
 
