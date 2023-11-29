@@ -80,6 +80,16 @@
       "password": "777",
       "confirmPassword": "777",
       "id": 8
+    },
+    {
+      "name": "Apeksha mhatre",
+      "email": "Apumhatre2325@gmail.com",
+      "mobNo": "9632587415",
+      "username": "Apu@20",
+      "gender": "Female",
+      "password": "6677",
+      "confirmPassword": "6677",
+      "id": 9
     }
   ],
   "user": [],

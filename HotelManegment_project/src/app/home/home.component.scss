@@ -1,68 +1,36 @@
 
 .container{
- background-color: rgb(213, 217, 219);
- height: 100%;
+background-image: url("/assets/img/wallpaperflare.com_wallpaper (7).jpg");
+height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
 }
 .btn{
     color:black;
-    background-color: rgb(171, 246, 238);
+    background-color: rgb(171, 211, 246);
     position: relative;
 
 }
 .mat-toolbar{
-    background-color: rgb(38, 104, 228);
+    background-color: rgb(157, 186, 239);
     color: white;
-  
+    height:100 ;
+    width: 300;
   }
   .mat-button{
-     color: white;
+     color: rgb(189, 179, 179);
   }
-  div.gallery {
-    border: 2px solid #ccc;
-  }
+.font{
+  font-size: 100px;
+  text-align: center;
+  font-style: italic;
+  color: whitesmoke;
   
-  div.gallery:hover {
-    border: 10px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  div.desc {
-    padding: 15px;
-    text-align: center;
-    background-color: rgb(156, 185, 240);
-    
-  }
-  
-  * {
-    box-sizing: border-box;
-    size: 10px;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-    border: 3px solid rgba(4, 16, 94, 0.569);
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
-  
-  .clearfix:after {
- 
-    display: table;
-    clear: both;
-  }
+}
+.font1{
+  color: whitesmoke;
+}
+.button{
+  color:rgb(92, 46, 245);
+  font-size: large;
+}
