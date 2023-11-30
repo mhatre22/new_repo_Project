@@ -1,40 +1,42 @@
-<div mat-dailog-title>
+<form [formGroup]="hoteldetailsform">
+  <div mat-dailog-title>
     <h2>Hotel Details</h2>
 </div>
-<div class="row" mat-dailog-content>
+<div mat-dailog-content>
     <mat-form-field appearance="outline">
         <mat-label>Hotel Name</mat-label>
-        <input matInput placeholder="ex.Taj Hotel">
+        <input matInput formControlName="name" placeholder="ex.Taj Hotel" >
       </mat-form-field>&nbsp;
       <mat-form-field appearance="outline">
         <mat-label> Hotel Email</mat-label>
-        <input matInput placeholder="ex.px@gmail.com">
+        <input matInput formControlName="email" placeholder="ex.px@gmail.com"  >
       </mat-form-field>&nbsp;<br>
       <mat-form-field appearance="outline">
         <mat-label> Hotel Contact</mat-label>
-        <input matInput placeholder="ex.5656565656">
+        <input matInput formControlName="phone"  placeholder="ex.5656565656"  >
       </mat-form-field>&nbsp;
       <mat-form-field appearance="outline">
         <mat-label> Hotel City</mat-label>
-        <input matInput placeholder="ex.Pune">
+        <input matInput  formControlName="city" placeholder="ex.Pune" >
       </mat-form-field>&nbsp;<br>
       <mat-form-field appearance="outline">
         <mat-label> Hotel Address</mat-label>
-        <input matInput placeholder="ex.ShivajiNagar,Tulshi bag">
+        <input matInput formControlName="address"  placeholder="ex.ShivajiNagar,Tulshi bag"  >
     </mat-form-field>&nbsp;
     <mat-form-field appearance="outline">
       <mat-label> Hotel Menu</mat-label>
-      <input matInput placeholder="ex.Veg/Non-veg">
+      <input matInput formControlName="menu" placeholder="ex.Veg/Non-veg" >
   </mat-form-field><br>
       <mat-form-field appearance="outline">
         <mat-label> Hotel Rooms</mat-label>
-        <input matInput placeholder="ex.456" type="number">
+        <input matInput formControlName="rooms" placeholder="ex.456" type="number" >
     </mat-form-field>&nbsp;
         <mat-form-field appearance="outline">
             <mat-label> Hotel Workers</mat-label>
-            <input matInput placeholder="ex.506" type="number">
+            <input matInput formControlName="workers"  placeholder="ex.506" type="number" >
           </mat-form-field><br>  
 </div>
 <div mat-dailog-actions class="action"></div>
-<button mat-raised-button color="accent">Save</button>&nbsp;
-<button mat-raised-button color="primary">Cancel</button><br>
+<button mat-raised-button color="accent" (click)="Submit()">Save</button>&nbsp;
+<button mat-raised-button color="primary" (click)="onreste()">Cancel</button><br>
+</form>

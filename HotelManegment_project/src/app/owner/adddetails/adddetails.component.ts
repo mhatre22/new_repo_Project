@@ -10,20 +10,27 @@ import { Router } from '@angular/router';
 export class AdddetailsComponent {
 constructor(private router:Router,
   private fb:FormBuilder){}
-hoteldetails! :FormGroup
+  hoteldetailsform! :FormGroup
+  submited :boolean=false;
 ngOnInit(){
-this.hoteldetail
+this.hoteldetailsform = this.fb.group({
+  name:this.fb.control( '',(Validators.required)),
+  email:this.fb.control('',(Validators.required)),
+  phone:this.fb.control('',(Validators.required)),
+  address:this.fb.control('',(Validators.required)),
+  city:this.fb.control('',(Validators.required)),
+  rooms:this.fb.control('',(Validators.required)),
+  menu:this.fb.control('',(Validators.required)),
+  workers:this.fb.control('',(Validators.required))
+});
 }
-hoteldetail(){
-this.hoteldetails = this.fb.group({
-  name:this.fb.control(Validators.required),
-  email:this.fb.control(Validators.required),
-  phone:this.fb.control(Validators.required),
-  address:this.fb.control(Validators.required),
-  city:this.fb.control(Validators.required),
-  rooms:this.fb.control(Validators.required),
-  gender:this.fb.control(Validators.required)
-
-})
+Submit(){
+ if(this.hoteldetailsform.valid){
+console.log(this.hoteldetailsform.value)
+ }
+}
+onreste(){
+  this.submited=false;
+  this.hoteldetailsform.reset();
 }
 }
