@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { StoringDataService } from 'src/app/storing-data.service';
+import { Component, Inject } from '@angular/core';
+
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AdddetailsComponent } from '../../adddetails/adddetails.component';
+
+
 
 @Component({
   selector: 'app-hotelregister',
@@ -9,7 +11,12 @@ import { StoringDataService } from 'src/app/storing-data.service';
   styleUrls: ['./hotelregister.component.scss']
 })
 export class HotelregisterComponent {
-  
+constructor(private dailog :MatDialog){}
+  addDetailhotel(){
+this.dailog.open(AdddetailsComponent)
+  }
+
+
   }
 
 

@@ -9,6 +9,7 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
 import { SharedModule } from './ownerhome/owner-login/common/shared/shared.module';
 import { OwnersucessComponent } from './ownersucess/ownersucess.component';
 import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.component';
+import { AdddetailsComponent } from './adddetails/adddetails.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.
     OwnerLoginComponent,
     OwnersucessComponent,
     HotelregisterComponent,
+    AdddetailsComponent,
   
   ],
   imports: [

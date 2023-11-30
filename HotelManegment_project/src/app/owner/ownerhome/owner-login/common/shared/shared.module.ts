@@ -11,6 +11,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,9 @@ MatRadioModule,
 MatDatepickerModule,
 ToastrModule,
 MatToolbarModule,
-MatChipsModule
+MatChipsModule,
+MatDialogModule
+
 
 
   ],
@@ -41,8 +44,11 @@ MatChipsModule
     MatDatepickerModule,
     ToastrModule,
     MatToolbarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
 
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  
+ }
