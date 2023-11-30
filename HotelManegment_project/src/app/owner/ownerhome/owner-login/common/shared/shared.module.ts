@@ -12,6 +12,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [],
@@ -28,7 +30,8 @@ MatDatepickerModule,
 ToastrModule,
 MatToolbarModule,
 MatChipsModule,
-MatDialogModule
+MatDialogModule,
+MatSelectModule
 
 
 
@@ -45,7 +48,8 @@ MatDialogModule
     ToastrModule,
     MatToolbarModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
 
   ]
 })
