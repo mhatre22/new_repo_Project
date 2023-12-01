@@ -5,18 +5,21 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MatDialogRef
+  ],
   imports: [
     CommonModule,
     MatCardModule,
@@ -31,7 +34,10 @@ ToastrModule,
 MatToolbarModule,
 MatChipsModule,
 MatDialogModule,
-MatSelectModule
+MatSelectModule,
+MatTableModule,
+MatPaginatorModule,
+MatDialogRef
 
 
 
@@ -49,7 +55,10 @@ MatSelectModule
     MatToolbarModule,
     MatChipsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogRef
 
   ]
 })
