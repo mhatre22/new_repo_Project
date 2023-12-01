@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,7 +14,9 @@ export class AdddetailsComponent {
 constructor(private router:Router,
   private fb:FormBuilder,
   private http:HttpClient,
-  private toaster: ToastrService){}
+  private toaster: ToastrService,
+  private dialog: MatDialogRef<AdddetailsComponent>,
+  @Inject(MAT_DIALOG_DATA) public data:any){}
   hoteldetailsform! :FormGroup
   submited :boolean=false;
   hotel:any;

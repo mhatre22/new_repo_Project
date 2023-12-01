@@ -1,4 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
@@ -14,8 +14,9 @@ selector: 'app-hotelregister',
 export class HotelregisterComponent {
 constructor(private dailog :MatDialog,
   private router:Router,
-  private http :HttpClient){}
-
+  private http :HttpClient,
+  private dialog: MatDialogRef<HotelregisterComponent>,
+  @Inject(MAT_DIALOG_DATA) public data:any){}
 
   addDetailhotel(){
 this.dailog.open(AdddetailsComponent)
