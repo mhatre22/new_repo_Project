@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-adddetails',
@@ -9,9 +11,12 @@ import { Router } from '@angular/router';
 })
 export class AdddetailsComponent {
 constructor(private router:Router,
-  private fb:FormBuilder){}
+  private fb:FormBuilder,
+  private http:HttpClient,
+  private toaster: ToastrService){}
   hoteldetailsform! :FormGroup
   submited :boolean=false;
+  hotel:any;
 ngOnInit(){
 this.hoteldetailsform = this.fb.group({
   name:this.fb.control( '',(Validators.required)),
@@ -26,7 +31,13 @@ this.hoteldetailsform = this.fb.group({
 }
 Submit(){
  if(this.hoteldetailsform.valid){
-console.log(this.hoteldetailsform.value)
+console.log(this.hoteldetailsform.value);
+this.http.post<any>( "http://localhost:3000/hotelDetails",this.hoteldetailsform.value).subscribe(result=>{
+this.hotel=result;
+this.toaster.success("Hotel added Successfully !!!");
+});
+ }else{
+  this.toaster.warning("Please Add valid data");
  }
 }
 onreste(){
