@@ -12,6 +12,7 @@ import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.
 import { AdddetailsComponent } from './adddetails/adddetails.component';
 
 
+
 @NgModule({
   declarations: [
     OwnerhomeComponent,
@@ -20,6 +21,7 @@ import { AdddetailsComponent } from './adddetails/adddetails.component';
     OwnersucessComponent,
     HotelregisterComponent,
     AdddetailsComponent,
+   
   
   ],
   imports: [
@@ -27,7 +29,8 @@ import { AdddetailsComponent } from './adddetails/adddetails.component';
     OwnerRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+  
     
   ]
 })

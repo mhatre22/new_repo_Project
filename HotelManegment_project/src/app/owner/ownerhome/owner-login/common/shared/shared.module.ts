@@ -11,14 +11,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
-    MatDialogRef
+
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatInputModule,
     MatIconModule,
 MatRadioModule,
-MatDatepickerModule,
 ToastrModule,
 MatToolbarModule,
 MatChipsModule,
@@ -37,7 +36,7 @@ MatDialogModule,
 MatSelectModule,
 MatTableModule,
 MatPaginatorModule,
-MatDialogRef
+
 
 
 
@@ -58,10 +57,9 @@ MatDialogRef
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogRef
+  
 
   ]
 })
 export class SharedModule {
-  
- }
+ };
