@@ -47,4 +47,5 @@ onreste(){
   this.submited=false;
   this.hoteldetailsform.reset();
 }
+
 }

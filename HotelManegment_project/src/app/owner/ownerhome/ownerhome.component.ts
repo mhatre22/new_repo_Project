@@ -1,3 +1,4 @@
+import { Dialog } from '@angular/cdk/dialog';
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
@@ -15,7 +16,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./ownerhome.component.scss']
 })
 export class OwnerhomeComponent {
-  constructor(private router:Router){}
+  constructor(private router:Router
+  ){}
 
   login(){
     this.router.navigateByUrl('owner/ownerlogin');
