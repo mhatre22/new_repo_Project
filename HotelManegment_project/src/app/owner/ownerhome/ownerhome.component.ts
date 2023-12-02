@@ -40,15 +40,5 @@ export class OwnerhomeComponent {
   back(){
     this.router.navigateByUrl('home');
    }
-   getHotelList(){
-    this.http.get("http://localhost:3000/hotelDetails").subscribe(result=>{
-      this.result=result;
-    })
-   
-    }
-   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-}
 
 }
