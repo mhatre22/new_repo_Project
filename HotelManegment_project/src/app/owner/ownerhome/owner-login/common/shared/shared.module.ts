@@ -11,7 +11,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -36,6 +36,7 @@ MatDialogModule,
 MatSelectModule,
 MatTableModule,
 MatPaginatorModule,
+MatDialog
 
 
 
@@ -57,6 +58,7 @@ MatPaginatorModule,
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDialog
   
 
   ]

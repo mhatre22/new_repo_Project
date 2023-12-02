@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotelregister',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./hotelregister.component.scss']
 })
 export class HotelregisterComponent {
+constructor(private router:Router,
+  ){}
+  addhoteldetails(){
+  
+  }
 
 }
