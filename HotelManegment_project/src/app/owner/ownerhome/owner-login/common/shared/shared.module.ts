@@ -11,10 +11,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatDialog} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -32,14 +33,11 @@ MatRadioModule,
 ToastrModule,
 MatToolbarModule,
 MatChipsModule,
-
 MatSelectModule,
 MatTableModule,
 MatPaginatorModule,
-MatDialog
-
-
-
+MatDialog,
+MatDialogModule
 
   ],
   exports:[
@@ -54,11 +52,13 @@ MatDialog
     ToastrModule,
     MatToolbarModule,
     MatChipsModule,
-   
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialog
+    MatDialog,
+    MatDialogModule
+  
+
   
 
   ]

@@ -33,7 +33,6 @@ import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.
     ReactiveFormsModule,
     FormsModule,
   
-  
     
   ]
 })

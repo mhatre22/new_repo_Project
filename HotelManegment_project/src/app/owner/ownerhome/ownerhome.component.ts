@@ -7,7 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-ownerhome',
@@ -15,25 +15,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./ownerhome.component.scss']
 })
 export class OwnerhomeComponent {
-  displayedColumns :string[]=[
-    'name',
-    'email',
-    'menu',
-    'address',
-    'rooms',
-    'workers',
-    'action'
-  ]
-  hoteldetailsform!:FormGroup;
-  delete:any;
-  dataSource!:MatTableDataSource<any>
-  @ViewChild(MatPaginator) pagintor!:MatPaginator;
-  @ViewChild(MatSort) sort!:MatSort;
-  constructor(private router:Router,
-    private http:HttpClient,
-    private toaster:ToastrService,
-    private dialog:MatDialog){}
-    result:any;
+  constructor(private router:Router){}
+
   login(){
     this.router.navigateByUrl('owner/ownerlogin');
   }
@@ -41,4 +24,5 @@ export class OwnerhomeComponent {
     this.router.navigateByUrl('home');
    }
 
-}
+
+  }
