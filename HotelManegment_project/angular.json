@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "HotelManegment_project:build:production"
+              "buildTarget": "HotelManegment_project:build:production"
             },
             "development": {
-              "browserTarget": "HotelManegment_project:build:development"
+              "buildTarget": "HotelManegment_project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "HotelManegment_project:build"
+            "buildTarget": "HotelManegment_project:build"
           }
         },
         "test": {
