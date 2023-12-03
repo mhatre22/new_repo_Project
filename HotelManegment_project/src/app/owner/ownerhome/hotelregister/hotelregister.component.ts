@@ -1,4 +1,4 @@
-import { Dialog } from '@angular/cdk/dialog';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { Component, Inject, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdddetailsComponent } from '../../adddetails/adddetails.component';
@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { StoringDataService } from 'src/app/storing-data.service';
+import { ToastrService } from 'ngx-toastr';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,57 +18,63 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./hotelregister.component.scss']
 })
 export class HotelregisterComponent {
-  displayedColumns: string[] = ['id','name','time','email','phone','city','rooms','menu','workers'];
-  dataSource!: MatTableDataSource<HotelregisterComponent>;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
-constructor(private router:Router,
-  private dailog:Dialog,
-  private fb:FormBuilder,
-  private http:HttpClient,
-
-){}
-hotelregister!:FormGroup;
-getHotel:any;
- ngOnInit(){
-  this.hotelregister = this.fb.group({
-    id:this.fb.control( '',(Validators.required)),
-  name:this.fb.control( '',(Validators.required)),
-  time:this.fb.control( '',(Validators.required)),
-  email:this.fb.control('',(Validators.required)),
-  phone:this.fb.control('',(Validators.required)),
-  address:this.fb.control('',(Validators.required)),
-  city:this.fb.control('',(Validators.required)),
-  rooms:this.fb.control('',(Validators.required)),
-  menu:this.fb.control('',(Validators.required)),
-  workers:this.fb.control('',(Validators.required))
-  })
- }
-  addhoteldetails(){
-  this.dailog.open(AdddetailsComponent)
-  }
-  hoteldetail:string[] =[
-    'id',
-    'name',
-    'time',
-    'email',
-    'phone',
-    'city',
-    'rooms',
-    'menu',
-    'workers'
-  ]
+  hotelForm: FormGroup;
   
-  
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  getHoteldetails(){
-    this.http.get("http://localhost:3000/hotelDetails").subscribe(result=>{
-      this.getHotel=result;
+  constructor(
+    private builder: FormBuilder,
+    private service: StoringDataService,
+    private toastr : ToastrService,
+    private dialog: MatDialogRef<HotelregisterComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any
+    
+  ){
+    this.hotelForm = this.builder.group({
+      name : '',
+      phone : '',
+      email : '',
+      menu : '',
+      discription : '',
+      address : '',
+      arooms : '',
+      workers : ''
     })
   }
+
+  ngOnInit(): void {
+    this.hotelForm.patchValue(this.data)
+  }
+
+  hotelRegistr(){
+    if(this.hotelForm.valid) {
+      if(this.data){
+        this.service.updateHotel(this.data.id, this.hotelForm.value).subscribe({
+          next: (val:any) => {
+            this.toastr.success('Hotel Detail Updated Successfully !!');
+            this.dialog.close(true);
+          },
+          error: (err:any)=>{
+            this.toastr.error("some error occurred")
+          }
+        })
+      }else {
+        console.log(this.hotelForm.value)
+      this.service.registerHotel(this.hotelForm.value).subscribe({
+        next: (val:any) => {
+          this.toastr.success('Hotel Registration Successfull', "Congratulations!!");
+          this.dialog.close(true);
+
+        },
+        error: (err:any)=>{
+          this.toastr.error("some error occurred")
+        }
+      })
+      }
+    }
+      
+  }
+
 }
+
+
+ 
+
