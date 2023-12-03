@@ -1,11 +1,20 @@
-<form [formGroup]="hoteldetailsform">
-  <div mat-dailog-title>
-    <h2>Hotel Details</h2>
-</div>
-<div mat-dailog-content>
-    <mat-form-field appearance="outline">
+<mat-card class="example-card"><br>
+  <form [formGroup]="hoteldetailsform" class="font">
+    <div mat-dailog-title >
+      <h2>Hotel Details</h2>
+    </div>
+    <div mat-dailog-content>
+      <mat-form-field appearance="outline">
+        <mat-label> Hotel ID</mat-label>
+        <input matInput formControlName="id" placeholder="1023" >
+      </mat-form-field>&nbsp;
+      <mat-form-field appearance="outline">
         <mat-label>Hotel Name</mat-label>
         <input matInput formControlName="name" placeholder="ex.Taj Hotel" >
+      </mat-form-field>&nbsp;<br>
+      <mat-form-field appearance="outline">
+        <mat-label> Hotel Time</mat-label>
+        <input matInput  formControlName="time" placeholder="10am To 10pm"  >
       </mat-form-field>&nbsp;
       <mat-form-field appearance="outline">
         <mat-label> Hotel Email</mat-label>
@@ -26,7 +35,7 @@
     <mat-form-field appearance="outline">
       <mat-label> Hotel Menu</mat-label>
       <input matInput formControlName="menu" placeholder="ex.Veg/Non-veg" >
-  </mat-form-field><br>
+    </mat-form-field><br>
       <mat-form-field appearance="outline">
         <mat-label> Hotel Rooms</mat-label>
         <input matInput formControlName="rooms" placeholder="ex.456" type="number" >
@@ -34,9 +43,42 @@
         <mat-form-field appearance="outline">
             <mat-label> Hotel Workers</mat-label>
             <input matInput formControlName="workers"  placeholder="ex.506" type="number" >
-          </mat-form-field><br>  
-</div>
-<div mat-dailog-actions class="action"></div>
-<button mat-raised-button color="accent" (click)="Submit()">Save</button>&nbsp;
-<button mat-raised-button color="primary" (click)="onreste()">Cancel</button><br>
-</form>
+          </mat-form-field><br>
+    </div>
+    <div mat-dailog-action><br>
+      <button mat-raised-button color="accent" (click)="Submit()">Save</button>&nbsp;
+    <button mat-raised-button color="primary" (click)="onreste()">Cancel</button><br>
+    </div>
+    
+    </form>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,14 +15,15 @@ constructor(private router:Router,
   private fb:FormBuilder,
   private http:HttpClient,
   private toaster: ToastrService,
-  private dialog: MatDialogRef<AdddetailsComponent>,
-  @Inject(MAT_DIALOG_DATA) public data:any){}
+  ){}
   hoteldetailsform! :FormGroup
   submited :boolean=false;
   hotel:any;
 ngOnInit(){
 this.hoteldetailsform = this.fb.group({
+  id:this.fb.control( '',(Validators.required)),
   name:this.fb.control( '',(Validators.required)),
+  time:this.fb.control( '',(Validators.required)),
   email:this.fb.control('',(Validators.required)),
   phone:this.fb.control('',(Validators.required)),
   address:this.fb.control('',(Validators.required)),
