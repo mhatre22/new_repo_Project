@@ -19,10 +19,12 @@ import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.
     OwnerLoginComponent,
     OwnersucessComponent,
     HotelregisterComponent,
+   
   
    
   
   ],
+  
   imports: [
     CommonModule,
     OwnerRoutingModule,

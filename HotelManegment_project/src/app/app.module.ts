@@ -19,9 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
+  SharedModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+  
     
   ],
   providers: [],
