@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
@@ -14,8 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule} from '@angular/material/dialog';
-
-import {  MatSortModule } from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import {  MatSortModule } from '@angular/material/sort';
   ],
   imports: [
     CommonModule,
-    MatCardModule,
     FormsModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -37,6 +35,8 @@ MatTableModule,
 MatPaginatorModule,
 MatDialogModule,
 MatSortModule,
+MatCardModule
+
 
 
 
@@ -44,7 +44,7 @@ MatSortModule,
 
   ],
   exports:[
-    MatCardModule,
+  
     FormsModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -59,6 +59,7 @@ MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
     MatSortModule,
+    MatCardModule
 
 
   
