@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -7,7 +6,6 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
@@ -36,23 +34,16 @@ MatTableModule,
 MatPaginatorModule,
 MatDialogModule,
 MatSortModule,
-MatCardModule
+MatCardModule],
 
 
-
-
-
-
-  ],
   exports:[
-  
     FormsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatRadioModule,
-    MatDatepickerModule,
     ToastrModule,
     MatToolbarModule,
     MatSelectModule,
@@ -61,14 +52,6 @@ MatCardModule
     MatDialogModule,
     MatSortModule,
     MatCardModule
-
-
-  
-  
-  
-
-  
-
   ]
 })
 export class SharedModule {
