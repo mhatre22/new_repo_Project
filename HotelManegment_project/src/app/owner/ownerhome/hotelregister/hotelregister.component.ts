@@ -8,6 +8,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { StoringDataService } from 'src/app/storing-data.service';
 import { ToastrService } from 'ngx-toastr';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { AddhotelComponent } from '../../addhotel/addhotel.component';
 
 
 @Component({
@@ -16,18 +18,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./hotelregister.component.scss']
 })
 export class HotelregisterComponent {
+constructor(private dailog:Dialog,
+  private router:Router){}
 
-  
-  constructor(
-    private builder: FormBuilder,
-    private toastr : ToastrService,
-    private dailog:Dialog,
-
-    
-  ){
- 
-
-}
+  addhoteldetails(){
+    this.dailog.open(AddhotelComponent);
+  }   
 
 
 }

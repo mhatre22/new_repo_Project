@@ -5,13 +5,15 @@ import { OwnerLoginComponent } from './ownerhome/owner-login/owner-login.compone
 import { OwnerSignupComponent } from './ownerhome/owner-signup/owner-signup.component';
 import { OwnersucessComponent } from './ownersucess/ownersucess.component';
 import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.component';
+import { AddhotelComponent } from './addhotel/addhotel.component';
 const routes: Routes = [
   {path: '', component: OwnerhomeComponent},
   {path:'ownerhome',  component: OwnerhomeComponent},
   {path:'ownerlogin', component: OwnerLoginComponent},
   {path:'ownersignup', component: OwnerSignupComponent},
   {path: 'ownersucees',component:OwnersucessComponent},
-  {path:'hotelregister',component:HotelregisterComponent}
+  {path:'hotelregister',component:HotelregisterComponent},
+  {path:'addhotel',component:AddhotelComponent}
 
 ];
 
