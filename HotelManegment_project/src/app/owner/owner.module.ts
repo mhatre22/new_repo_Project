@@ -7,7 +7,6 @@ import { OwnerLoginComponent } from './ownerhome/owner-login/owner-login.compone
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SharedModule } from './ownerhome/owner-login/common/shared/shared.module';
 import { OwnersucessComponent } from './ownersucess/ownersucess.component';
-import { AdddetailsComponent } from './adddetails/adddetails.component';
 import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.component';
 
 
@@ -19,7 +18,6 @@ import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.
     OwnerSignupComponent,
     OwnerLoginComponent,
     OwnersucessComponent,
-    AdddetailsComponent,
     HotelregisterComponent,
   
    
