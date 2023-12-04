@@ -5,7 +5,8 @@ import { OwnerLoginComponent } from './ownerhome/owner-login/owner-login.compone
 import { OwnerSignupComponent } from './ownerhome/owner-signup/owner-signup.component';
 import { OwnersucessComponent } from './ownersucess/ownersucess.component';
 import { HotelregisterComponent } from './ownerhome/hotelregister/hotelregister.component';
-import { AddhoteldetailsComponent } from './ownerhome/addhoteldetails/addhoteldetails.component';
+import { OwneraddhotelComponent } from './ownerhome/owneraddhotel/owneraddhotel.component';
+
 
 const routes: Routes = [
   {path: '', component: OwnerhomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'ownersignup', component: OwnerSignupComponent},
   {path: 'ownersucees',component:OwnersucessComponent},
   {path:'hotelregister',component:HotelregisterComponent},
-{path:'addhoteldetails',component:AddhoteldetailsComponent}
+  {path:'owneraddhotel',component:OwneraddhotelComponent}
+
 
 ];
 

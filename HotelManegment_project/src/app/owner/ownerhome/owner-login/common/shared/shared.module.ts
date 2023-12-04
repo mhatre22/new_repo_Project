@@ -35,8 +35,6 @@ MatPaginatorModule,
 MatDialogModule,
 MatSortModule,
 MatCardModule],
-
-
   exports:[
     FormsModule,
     MatButtonModule,

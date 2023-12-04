@@ -2,7 +2,8 @@ import { Dialog} from '@angular/cdk/dialog';
 import { Component, Inject} from '@angular/core';
 
 import { Router } from '@angular/router';
-import { AddhoteldetailsComponent } from '../addhoteldetails/addhoteldetails.component';
+import { OwneraddhotelComponent } from '../owneraddhotel/owneraddhotel.component';
+
 
 
 
@@ -14,8 +15,8 @@ import { AddhoteldetailsComponent } from '../addhoteldetails/addhoteldetails.com
 export class HotelregisterComponent {
 constructor(private dailog:Dialog,
   private router:Router){}
-  addhoteldetails(){
-    this.dailog.open(AddhoteldetailsComponent)
+  ownerhotelregister(){
+    this.dailog.open(OwneraddhotelComponent)
   }
 
 }
