@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http'; 
 import { SharedModule } from './owner/ownerhome/owner-login/common/shared/shared.module';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 
 
@@ -22,8 +24,8 @@ import { SharedModule } from './owner/ownerhome/owner-login/common/shared/shared
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-  SharedModule
-  
+   SharedModule
+   
     
   ],
   providers: [],
